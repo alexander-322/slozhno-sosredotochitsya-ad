@@ -10,3 +10,30 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+.decorated-zone {
+    position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+    content: "";
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+    pointer-events: none;
+}
+
+.decorated-zone::before {
+    inset-block-start: var(--padding-main);
+    inset-inline-end: var(--padding-main);
+    border-block-start: 1px solid var(--button-color);
+    border-inline-end: 1px solid var(--button-color);
+}
+
+.decorated-zone::after {
+    inset-block-end: var(--padding-main);
+    inset-inline-start: var(--padding-main);
+    border-block-end: 1px solid var(--button-color);
+    border-inline-start: 1px solid var(--button-color);
+}
