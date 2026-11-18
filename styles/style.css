@@ -75,3 +75,57 @@
     border: 1px solid var(--button-color);
     pointer-events: none;
 }
+
+.header {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    block-size: 100vh;
+    min-block-size: 668px;
+    padding: var(--padding-main);
+}
+
+.header__content {
+    display: grid;
+    align-content: center;
+    gap: var(--gap-main);
+}
+
+.header__title {
+    color: var(--title-color);
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: 0.825;
+    text-shadow: 4px 4px 0 var(--accent-color);
+    margin-inline-start: calc(var(--padding-main) * -1);
+}
+
+.header__text {
+    justify-self: end;
+    max-inline-size: 360px;
+}
+
+.title-decor {
+    background-color: var(--title-decor-bg);
+    color: var(--title-decor-text);
+    font-weight: 700;
+}
+
+.header__rec {
+    position: absolute;
+    inset-block-start: var(--padding-main);
+    inset-inline-end: calc(var(--padding-main) + 30px);
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.header__rec::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-end: -20px;
+    inline-size: 8px;
+    block-size: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px 2px var(--accent-color);
+    transform: translateY(-50%);
+}
